@@ -2,6 +2,9 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const apiRouter = require('./routes/api');
+var cors = require('cors')
+
+
 
 // bodyParser = require('body-parser');
 // const fetch = require('node-fetch');
@@ -16,7 +19,8 @@ const PORT = 3000;
  * handle parsing request body
  */
  app.use(express.json());
- app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 //  const request = require('request');
 
@@ -33,9 +37,9 @@ const PORT = 3000;
  */
  app.use(express.static(path.resolve(__dirname, '../client')));
 
-// app.get('/', function (req, res) {
-//   res.sendFile(path.join(__dirname, '../client/components/watchlist.js'));
-// });
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '../client/components/watchlist.js'));
+});
 
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname, '../client/index.html'));
