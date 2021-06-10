@@ -28,14 +28,25 @@ const PORT = 3000;
 //   res.render(path.join(__dirname, '../views/index.ejs'));
 // });
 
+/**
+ * handle requests for static files
+ */
+ app.use(express.static(path.resolve(__dirname, '../client')));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
-});
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, '../client/components/watchlist.js'));
+// });
+
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, '../client/index.html'));
+// });
 
 
 
 
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, '../client/index.html'));
+// });
 
 
 

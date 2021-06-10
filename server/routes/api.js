@@ -14,7 +14,9 @@ router.post('/stock_watchlist',  investorController.addStock,(req, res) => {
   //   res.status(200).json({ message: 'Display the stock  watchlist' })
   // });
 
-  module.exports = router;
+// router.get('/watch', (req, res) => {
+//     res.send('list of all symbols')
+//   })
 
 
 
