@@ -20,6 +20,7 @@ const PORT = 3000;
  */
  app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true })); // added now
 app.use(cors());
 
 //  const request = require('request');
