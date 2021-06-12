@@ -13,7 +13,7 @@ router.post('/stock_watchlist', investorController.addStock, (req, res) => {
   
 });
 router.get('/stockDetails',investorController.getStock, (req, res) => {
-  res.status(200).json(res.locals.symbol )
+   res.status(200).json(res.locals.data)
 });
   
 

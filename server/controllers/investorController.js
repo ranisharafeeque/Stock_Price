@@ -16,9 +16,11 @@ investorController.addStock = async (req, res, next) => {
   // const data = res.locals;
 //  res.locals.data = {}
   const sql = `INSERT INTO stock_watchlist (symbol, company)
-  VALUES('${symbol}', '${profile.name}')`;
+  VALUES('${symbol}', '${profile.name}') RETURNING *`;
   try {
-    await db.query(sql);
+    const data = await db.query(sql);
+    console.log(data.rows[0]);
+    res.locals.data = data.rows[0];
     return next();
   } catch (err) {
     console.log(err);

@@ -21,8 +21,11 @@ class Watchlist extends Component {
         axios.get('http://localhost:3000/api/stockDetails', {
             stockList: [this.state.stockList]
             
-        }).then((res) =>
-            console.log(res.locals.symbol ));
+        }).then((res) =>{
+
+            console.log('response', res)
+            console.log(res.locals.symbol );
+        })
         
     };
 
